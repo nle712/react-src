@@ -41,6 +41,7 @@ class App extends Component {
               description={ todo.description }
               isCompleted={ todo.isCompleted }
               toggleComplete={ () => this.toggleComplete(index) }
+              deleteTodo={()=> this.deleteTodo.bind(this)}
             /> )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
@@ -51,7 +52,7 @@ class App extends Component {
           />
           <input type="submit" />
         </form>
-      </div>
+       </div>
     );
   }
 }
