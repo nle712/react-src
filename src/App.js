@@ -32,13 +32,14 @@ class App extends Component {
     this.setState({ todos: todos });
   }
   deleteTodo(item) {
-    const newTodos = this.state.todos.filter(i => {
-      return i !== item
-    })
+    console.log('delete')
+    const newTodos = this.state.todos.filter(t => {
+      return t !== item;
+    });
 
     this.setState({
-      todos: [...newTodos]
-    })
+      todos: newTodos
+    });
   }
   render() {
     return (
@@ -53,7 +54,6 @@ class App extends Component {
               item={ todo }
               deleteTodo={ this.deleteTodo.bind(this) } />
            )}
-            /> )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
           <input
